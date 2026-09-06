@@ -12,5 +12,5 @@ export const faqs = [
   ['Wie geht es nach dem Absenden des Formulars weiter?', 'Die Tally-Dankeseite enthält Bestätigung, Zahlungsinformationen und passende WhatsApp-Kontaktmöglichkeiten.'],
   ['Wo finde ich die WhatsApp-Kontakte?', 'Die zielgruppenspezifischen Kontakte stehen nach dem Absenden auf der Tally-Dankeseite.'],
   ['Kann ich Weg des Wissens unabhängig von einer Anmeldung unterstützen?', 'Ja. Freiwillige Spenden sind unabhängig von einer Anmeldung möglich. Bitte verwende als Verwendungszweck „Spende“.'],
-  ['Wie werden meine Daten verarbeitet?', 'Die Anmeldung wird über das externe Tally-Formular übermittelt. Vollständige Informationen werden vor Veröffentlichung in Datenschutzerklärung ergänzt.'],
+  ['Wie werden meine Daten verarbeitet?', 'Die Anmeldung wird über das externe Tally-Formular übermittelt. Informationen zur Datenverarbeitung findest du in der Datenschutzerklärung.'],
 ] as const;

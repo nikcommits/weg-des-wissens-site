@@ -91,8 +91,14 @@ details p { max-width: 65ch; margin: 0 0 1.25rem; color: color-mix(in oklch, var
 footer { border-top: 1px solid var(--line); }
 .footer { flex-wrap: wrap; padding: 1.75rem 0; }
 .footer p { margin: 0; color: var(--muted); font-size: .9rem; }
-.legal { min-height: 65vh; padding: 8rem 0; }
-.legal p { max-width: 65ch; }
+.legal { min-height: 65vh; padding: clamp(5rem, 10vw, 8rem) 0; }
+.legal > h1 { max-width: 14ch; margin-bottom: 1.25rem; }
+.legal > section { max-width: 68ch; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
+.legal section h2 { font-size: clamp(1.5rem, 2.5vw, 2.2rem); }
+.legal section p, .legal-intro { max-width: 68ch; }
+.legal-intro { margin: 0; font-size: 1.12rem; color: var(--muted); }
+.legal code { overflow-wrap: anywhere; }
+.legal-back { margin-top: 3rem; font-weight: 800; }
 
 @media (max-width: 900px) {
   .hero { min-height: auto; }
