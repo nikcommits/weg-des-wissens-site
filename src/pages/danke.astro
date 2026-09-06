@@ -20,8 +20,27 @@ const baseUrl = `${import.meta.env.BASE_URL}/`;
 
 <BaseLayout
   title="Anmeldung erfolgreich | Weg des Wissens"
-  description="Deine Anmeldung für das Bildungsprogramm Weg des Wissens ist eingegangen. Tritt jetzt per WhatsApp der passenden Gruppe bei."
+  description="Deine Anmeldung für das Bildungsprogramm Weg des Wissens ist eingegangen."
 >
+  <!-- ZUGRIFFSSCHUTZ: Seite wird bei Direktaufruf sofort auf die Startseite umgeleitet -->
+  <script is:inline define:vars={{ baseUrl }}>
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      // Erlaubt nur Zugriff, wenn die Weiterleitung von Tally kommt (?ref=tally oder submission_id)
+      const isAuthorized =
+        params.get('ref') === 'tally' ||
+        params.has('submission_id') ||
+        params.has('token') ||
+        params.get('status') === 'success';
+
+      if (!isAuthorized) {
+        window.location.replace(baseUrl);
+      } else {
+        document.documentElement.classList.add('access-granted');
+      }
+    })();
+  </script>
+
   <header class="site-header">
     <div class="shell header-inner">
       <a class="brand brand-mark" href={baseUrl} aria-label="Zur Startseite">
@@ -177,6 +196,11 @@ const baseUrl = `${import.meta.env.BASE_URL}/`;
 </BaseLayout>
 
 <style>
+  /* Versteckt den Inhalt vorübergehend, bis die Berechtigung per Skript geprüft wurde */
+  html:not(.access-granted) .thankyou-page {
+    display: none;
+  }
+
   .thankyou-page {
     padding-bottom: clamp(4rem, 8vw, 7rem);
   }
