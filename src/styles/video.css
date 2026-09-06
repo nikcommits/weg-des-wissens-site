@@ -1,0 +1,4 @@
+.video-consent{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:11rem;margin-top:2rem;padding:1.25rem;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
+.video-consent p{margin:0}
+.video-consent+iframe{display:block;width:100%;aspect-ratio:16/9;margin-top:2rem;border:0;border-radius:var(--radius)}
+@media(max-width:760px){.video-consent{align-items:flex-start;flex-direction:column}}
