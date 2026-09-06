@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+const baseUrl = `${import.meta.env.BASE_URL}/`;
 ---
 <BaseLayout title="Datenschutzerklärung | Weg des Wissens e. V." description="Datenschutzerklärung von Weg des Wissens e. V.">
   <main id="inhalt" class="legal shell">
@@ -15,7 +16,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <section><h2>7. Speicherdauer</h2><p>Wir speichern personenbezogene Daten nur so lange, wie dies für den jeweiligen Zweck erforderlich ist oder gesetzliche Aufbewahrungspflichten bestehen. Technische Verbindungsdaten werden nach den Vorgaben des Hosting-Anbieters gelöscht oder anonymisiert. Angaben aus dem Anmeldeformular speichern wir, solange sie für die Bearbeitung der Anmeldung, die Teilnahme oder gesetzliche Nachweise erforderlich sind.</p></section>
     <section><h2>8. Ihre Rechte</h2><p>Sie haben nach Maßgabe der gesetzlichen Voraussetzungen das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch gegen Verarbeitungen auf Grundlage von Art. 6 Abs. 1 lit. e oder f DSGVO. Eine erteilte Einwilligung können Sie jederzeit mit Wirkung für die Zukunft widerrufen.</p><p>Wenden Sie sich hierzu an <a href="mailto:wisamkouli@hotmail.de">wisamkouli@hotmail.de</a>. Außerdem haben Sie das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren.</p></section>
     <section><h2>9. Aktualität</h2><p>Diese Datenschutzerklärung gilt für die aktuelle Website. Wir passen sie an, wenn sich Datenverarbeitungen oder rechtliche Anforderungen ändern.</p></section>
-    <p class="legal-back"><a href="/">Zur Startseite</a></p>
+    <p class="legal-back"><a href={baseUrl}>Zur Startseite</a></p>
   </main>
-  <footer><div class="shell footer"><div class="brand"><img src="/images/wdw-logo.png" alt="" width="38" height="34"/><span>Weg des Wissens</span></div><nav aria-label="Rechtliches"><a href="/datenschutz" aria-current="page">Datenschutz</a><a href="/impressum">Impressum</a><a href="/">Zur Anmeldung</a></nav></div></footer>
+  <footer><div class="shell footer"><div class="brand"><img src={`${baseUrl}images/wdw-logo.png`} alt="" width="38" height="34"/><span>Weg des Wissens</span></div><nav aria-label="Rechtliches"><a href={`${baseUrl}datenschutz`} aria-current="page">Datenschutz</a><a href={`${baseUrl}impressum`}>Impressum</a><a href={baseUrl}>Zur Anmeldung</a></nav></div></footer>
 </BaseLayout>

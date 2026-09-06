@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+const baseUrl = `${import.meta.env.BASE_URL}/`;
 ---
 <BaseLayout title="Impressum | Weg des Wissens e. V." description="Impressum von Weg des Wissens e. V.">
   <main id="inhalt" class="legal shell">
@@ -11,7 +12,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <section><h2>Kontakt</h2><p><a href="mailto:wisamkouli@hotmail.de">wisamkouli@hotmail.de</a></p></section>
     <section><h2>Gemeinnützigkeit</h2><p>Dem Verein liegt ein Feststellungsbescheid nach § 60a AO vor.</p></section>
     <section><h2>Verbraucherstreitbeilegung</h2><p>Wir sind weder bereit noch verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p></section>
-    <p class="legal-back"><a href="/">Zur Startseite</a></p>
+    <p class="legal-back"><a href={baseUrl}>Zur Startseite</a></p>
   </main>
-  <footer><div class="shell footer"><div class="brand"><img src="/images/wdw-logo.png" alt="" width="38" height="34"/><span>Weg des Wissens</span></div><nav aria-label="Rechtliches"><a href="/datenschutz">Datenschutz</a><a href="/impressum" aria-current="page">Impressum</a><a href="/">Zur Anmeldung</a></nav></div></footer>
+  <footer><div class="shell footer"><div class="brand"><img src={`${baseUrl}images/wdw-logo.png`} alt="" width="38" height="34"/><span>Weg des Wissens</span></div><nav aria-label="Rechtliches"><a href={`${baseUrl}datenschutz`}>Datenschutz</a><a href={`${baseUrl}impressum`} aria-current="page">Impressum</a><a href={baseUrl}>Zur Anmeldung</a></nav></div></footer>
 </BaseLayout>
