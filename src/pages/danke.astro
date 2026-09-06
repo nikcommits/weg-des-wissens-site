@@ -1,16 +1,26 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-// HIER DIE ECHTEN WHATSAPP-EINLADUNGSLINKS EINTRAGEN:
-const WHATSAPP_LINK_BRUEDER = '#'; // z.B. 'https://chat.whatsapp.com/...'
-const WHATSAPP_LINK_SCHWESTERN = '#'; // z.B. 'https://chat.whatsapp.com/...'
+const PHONE_BRUEDER = '491792321620';
+const DISPLAY_BRUEDER = '0179 2321620';
+const MSG_BRUEDER = encodeURIComponent(
+  'Salam alaykum, ich habe mich für das Bildungsprogramm Weg des Wissens angemeldet und möchte der Brüder-Gruppe beitreten.'
+);
+const WA_LINK_BRUEDER = `https://wa.me/${PHONE_BRUEDER}?text=${MSG_BRUEDER}`;
+
+const PHONE_SCHWESTERN = '491722955008';
+const DISPLAY_SCHWESTERN = '0172 2955008';
+const MSG_SCHWESTERN = encodeURIComponent(
+  'Salam alaykum, ich habe mich für das Bildungsprogramm Weg des Wissens angemeldet und möchte der Schwestern-Gruppe beitreten.'
+);
+const WA_LINK_SCHWESTERN = `https://wa.me/${PHONE_SCHWESTERN}?text=${MSG_SCHWESTERN}`;
 
 const baseUrl = `${import.meta.env.BASE_URL}/`;
 ---
 
 <BaseLayout
   title="Anmeldung erfolgreich | Weg des Wissens"
-  description="Deine Anmeldung für das Bildungsprogramm Weg des Wissens ist eingegangen. Tritt jetzt der passenden WhatsApp-Gruppe bei."
+  description="Deine Anmeldung für das Bildungsprogramm Weg des Wissens ist eingegangen. Tritt jetzt per WhatsApp der passenden Gruppe bei."
 >
   <header class="site-header">
     <div class="shell header-inner">
@@ -28,36 +38,36 @@ const baseUrl = `${import.meta.env.BASE_URL}/`;
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <polyline points="20 6 9 17 4 12"></polyline>
         </svg>
-        <span>Anmeldung eingegangen</span>
+        <span>Anmeldung erfolgreich eingegangen</span>
       </div>
 
       <h1>Herzlich willkommen bei Weg des Wissens.</h1>
       <p class="lead">
-        Deine Anmeldung wurde erfolgreich übermittelt. Um zum Programmstart alle Unterrichtsinhalte,
-        Termine und Mitteilungen zu erhalten, trete bitte jetzt deiner jeweiligen WhatsApp-Gruppe bei.
+        Deine Anmeldung wurde erfolgreich übermittelt. Um der offiziellen WhatsApp-Gruppe für den Unterricht
+        und alle Ankündigungen beizutreten, melde dich bitte direkt per WhatsApp bei unserer Koordination:
       </p>
 
-      <!-- Schritt-für-Schritt Ablauf -->
+      <!-- Ablauf in 3 Schritten -->
       <div class="process-steps">
         <div class="step-item">
           <span class="step-num">1</span>
           <div>
-            <strong>Gruppe wählen</strong>
-            <p>Wähle unten die passende Gruppe aus und klicke auf „Beitritt anfragen“.</p>
+            <strong>Kontakt aufnehmen</strong>
+            <p>Klicke unten auf den entsprechenden WhatsApp-Button für Brüder oder Schwestern.</p>
           </div>
         </div>
         <div class="step-item">
           <span class="step-num">2</span>
           <div>
-            <strong>Überprüfung</strong>
-            <p>Wir gleichen deine Anfrage mit deiner Anmeldung ab (Schwestern: kurze Sprachnachricht).</p>
+            <strong>Vorstellung & Abgleich</strong>
+            <p>Nenne deinen Namen. Schwestern bitten wir um eine kurze Voice-Mail zur Verifizierung.</p>
           </div>
         </div>
         <div class="step-item">
           <span class="step-num">3</span>
           <div>
-            <strong>Freischaltung & Start</strong>
-            <p>Nach Genehmigung durch die Leitung bist du freigeschaltet und voll dabei.</p>
+            <strong>Gruppen-Zutritt</strong>
+            <p>Du wirst direkt in die entsprechende WhatsApp-Gruppe hinzugefügt und kannst starten.</p>
           </div>
         </div>
       </div>
@@ -71,8 +81,8 @@ const baseUrl = `${import.meta.env.BASE_URL}/`;
           <div class="card-tag">Gruppe für Brüder</div>
           <h2>Weg des Wissens · Brüder</h2>
           <p class="card-desc">
-            Die offizielle WhatsApp-Gruppe für alle registrierten Brüder zur Koordination des Bildungsprogramms,
-            Unterrichtsmaterialien und Termine.
+            Um der Brüder-Gruppe beizutreten, melde dich bitte per WhatsApp unter
+            <strong>{DISPLAY_BRUEDER}</strong>.
           </p>
 
           <div class="card-notice info">
@@ -82,22 +92,22 @@ const baseUrl = `${import.meta.env.BASE_URL}/`;
               <line x1="12" y1="16" x2="12.01" y2="16"></line>
             </svg>
             <p>
-              <strong>Freigabe erforderlich:</strong> Dein Beitritt wird nach Überprüfung deiner Anmeldung
-              durch unsere Gruppen-Leitung freigeschaltet.
+              Sende uns kurz deinen vollen Namen per WhatsApp, damit wir deinen Beitritt mit deiner Anmeldung
+              abgleichen können.
             </p>
           </div>
 
           <div class="card-action">
             <a
-              href={WHATSAPP_LINK_BRUEDER}
+              href={WA_LINK_BRUEDER}
               class="button full-width"
-              target={WHATSAPP_LINK_BRUEDER !== '#' ? '_blank' : undefined}
+              target="_blank"
               rel="noreferrer"
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
               </svg>
-              <span>Beitritt anfragen (Brüder)</span>
+              <span>Per WhatsApp melden ({DISPLAY_BRUEDER})</span>
             </a>
           </div>
         </article>
@@ -107,35 +117,34 @@ const baseUrl = `${import.meta.env.BASE_URL}/`;
           <div class="card-tag">Gruppe für Schwestern</div>
           <h2>Weg des Wissens · Schwestern</h2>
           <p class="card-desc">
-            Der geschützte Bereich für alle registrierten Schwestern mit weiblicher Betreuung,
-            Unterrichtsinhalten und Austausch im Programm.
+            Schwestern können sich unter <strong>{DISPLAY_SCHWESTERN}</strong> per WhatsApp melden,
+            um in die geschützte Schwestern-Gruppe aufgenommen zu werden.
           </p>
 
           <div class="card-notice verification">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
             </svg>
             <div>
               <strong>Schutz & Verifizierung:</strong>
               <p>
-                Zum Schutz des geschützten Raums bitten wir dich nach dem Klick auf „Beitritt anfragen“ um eine
-                <strong>kurze Sprachnachricht</strong> an die Administratorin auf WhatsApp, um sicherzustellen,
-                dass ausschließlich Schwestern in die Gruppe aufgenommen werden.
+                <strong>Bitte stelle dich in einer Voice-Mail vor</strong>, damit wir sicherstellen können,
+                dass nur Schwestern in die Schwesterngruppe aufgenommen werden.
               </p>
             </div>
           </div>
 
           <div class="card-action">
             <a
-              href={WHATSAPP_LINK_SCHWESTERN}
+              href={WA_LINK_SCHWESTERN}
               class="button full-width"
-              target={WHATSAPP_LINK_SCHWESTERN !== '#' ? '_blank' : undefined}
+              target="_blank"
               rel="noreferrer"
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
               </svg>
-              <span>Beitritt anfragen (Schwestern)</span>
+              <span>Per WhatsApp melden ({DISPLAY_SCHWESTERN})</span>
             </a>
           </div>
         </article>
@@ -143,10 +152,9 @@ const baseUrl = `${import.meta.env.BASE_URL}/`;
 
       <!-- Hilfe / Support -->
       <aside class="support-box">
-        <h3>Fragen oder Verzögerungen beim Beitritt?</h3>
+        <h3>Fragen zur Anmeldung oder zum Beitritt?</h3>
         <p>
-          Sollte deine Beitrittsanfrage nicht innerhalb von 24 Stunden bestätigt werden oder hast du
-          organisatorische Fragen, schreibe uns gerne eine E-Mail an:
+          Falls du Fragen hast oder Unterstützung benötigst, kannst du uns jederzeit auch per E-Mail erreichen:
           <a href="mailto:wisamkouli@hotmail.de">wisamkouli@hotmail.de</a>.
         </p>
       </aside>
@@ -350,8 +358,10 @@ const baseUrl = `${import.meta.env.BASE_URL}/`;
   .full-width {
     width: 100%;
     gap: 0.75rem;
-    font-size: 1rem;
+    font-size: 0.95rem;
     padding-block: 0.9rem;
+    padding-inline: 1rem;
+    text-align: center;
   }
 
   .button.outline {
