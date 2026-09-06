@@ -1,0 +1,405 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// HIER DIE ECHTEN WHATSAPP-EINLADUNGSLINKS EINTRAGEN:
+const WHATSAPP_LINK_BRUEDER = '#'; // z.B. 'https://chat.whatsapp.com/...'
+const WHATSAPP_LINK_SCHWESTERN = '#'; // z.B. 'https://chat.whatsapp.com/...'
+
+const baseUrl = `${import.meta.env.BASE_URL}/`;
+---
+
+<BaseLayout
+  title="Anmeldung erfolgreich | Weg des Wissens"
+  description="Deine Anmeldung für das Bildungsprogramm Weg des Wissens ist eingegangen. Tritt jetzt der passenden WhatsApp-Gruppe bei."
+>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand brand-mark" href={baseUrl} aria-label="Zur Startseite">
+        <img src={`${baseUrl}images/wdw-logo.png`} alt="Weg des Wissens" width="46" height="41" />
+        <span>Weg des Wissens</span>
+      </a>
+      <a class="button small outline" href={baseUrl}>Zur Startseite</a>
+    </div>
+  </header>
+
+  <main id="inhalt" class="thankyou-page">
+    <section class="shell thankyou-hero">
+      <div class="badge">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+        <span>Anmeldung eingegangen</span>
+      </div>
+
+      <h1>Herzlich willkommen bei Weg des Wissens.</h1>
+      <p class="lead">
+        Deine Anmeldung wurde erfolgreich übermittelt. Um zum Programmstart alle Unterrichtsinhalte,
+        Termine und Mitteilungen zu erhalten, trete bitte jetzt deiner jeweiligen WhatsApp-Gruppe bei.
+      </p>
+
+      <!-- Schritt-für-Schritt Ablauf -->
+      <div class="process-steps">
+        <div class="step-item">
+          <span class="step-num">1</span>
+          <div>
+            <strong>Gruppe wählen</strong>
+            <p>Wähle unten die passende Gruppe aus und klicke auf „Beitritt anfragen“.</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <span class="step-num">2</span>
+          <div>
+            <strong>Überprüfung</strong>
+            <p>Wir gleichen deine Anfrage mit deiner Anmeldung ab (Schwestern: kurze Sprachnachricht).</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <span class="step-num">3</span>
+          <div>
+            <strong>Freischaltung & Start</strong>
+            <p>Nach Genehmigung durch die Leitung bist du freigeschaltet und voll dabei.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gruppen-Karten -->
+    <section class="shell groups-section">
+      <div class="groups-grid">
+        <!-- KARTE BRÜDER -->
+        <article class="group-card">
+          <div class="card-tag">Gruppe für Brüder</div>
+          <h2>Weg des Wissens · Brüder</h2>
+          <p class="card-desc">
+            Die offizielle WhatsApp-Gruppe für alle registrierten Brüder zur Koordination des Bildungsprogramms,
+            Unterrichtsmaterialien und Termine.
+          </p>
+
+          <div class="card-notice info">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+            <p>
+              <strong>Freigabe erforderlich:</strong> Dein Beitritt wird nach Überprüfung deiner Anmeldung
+              durch unsere Gruppen-Leitung freigeschaltet.
+            </p>
+          </div>
+
+          <div class="card-action">
+            <a
+              href={WHATSAPP_LINK_BRUEDER}
+              class="button full-width"
+              target={WHATSAPP_LINK_BRUEDER !== '#' ? '_blank' : undefined}
+              rel="noreferrer"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+              </svg>
+              <span>Beitritt anfragen (Brüder)</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- KARTE SCHWESTERN -->
+        <article class="group-card highlight">
+          <div class="card-tag">Gruppe für Schwestern</div>
+          <h2>Weg des Wissens · Schwestern</h2>
+          <p class="card-desc">
+            Der geschützte Bereich für alle registrierten Schwestern mit weiblicher Betreuung,
+            Unterrichtsinhalten und Austausch im Programm.
+          </p>
+
+          <div class="card-notice verification">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+            <div>
+              <strong>Schutz & Verifizierung:</strong>
+              <p>
+                Zum Schutz des geschützten Raums bitten wir dich nach dem Klick auf „Beitritt anfragen“ um eine
+                <strong>kurze Sprachnachricht</strong> an die Administratorin auf WhatsApp, um sicherzustellen,
+                dass ausschließlich Schwestern in die Gruppe aufgenommen werden.
+              </p>
+            </div>
+          </div>
+
+          <div class="card-action">
+            <a
+              href={WHATSAPP_LINK_SCHWESTERN}
+              class="button full-width"
+              target={WHATSAPP_LINK_SCHWESTERN !== '#' ? '_blank' : undefined}
+              rel="noreferrer"
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+              </svg>
+              <span>Beitritt anfragen (Schwestern)</span>
+            </a>
+          </div>
+        </article>
+      </div>
+
+      <!-- Hilfe / Support -->
+      <aside class="support-box">
+        <h3>Fragen oder Verzögerungen beim Beitritt?</h3>
+        <p>
+          Sollte deine Beitrittsanfrage nicht innerhalb von 24 Stunden bestätigt werden oder hast du
+          organisatorische Fragen, schreibe uns gerne eine E-Mail an:
+          <a href="mailto:wisamkouli@hotmail.de">wisamkouli@hotmail.de</a>.
+        </p>
+      </aside>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell footer">
+      <div class="brand">
+        <img src={`${baseUrl}images/wdw-logo.png`} alt="" width="38" height="34" />
+        <span>Weg des Wissens</span>
+      </div>
+      <nav aria-label="Rechtliches">
+        <a href={`${baseUrl}datenschutz`}>Datenschutz</a>
+        <a href={`${baseUrl}impressum`}>Impressum</a>
+        <a href={baseUrl}>Zur Startseite</a>
+      </nav>
+    </div>
+  </footer>
+</BaseLayout>
+
+<style>
+  .thankyou-page {
+    padding-bottom: clamp(4rem, 8vw, 7rem);
+  }
+
+  .thankyou-hero {
+    padding-top: clamp(3rem, 6vw, 5rem);
+    padding-bottom: clamp(2rem, 4vw, 3rem);
+    max-width: 58rem;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.85rem;
+    border-radius: 9999px;
+    background: color-mix(in oklch, var(--gold) 25%, transparent);
+    color: var(--ink);
+    font-size: 0.85rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+  }
+
+  .badge svg {
+    color: color-mix(in oklch, var(--ink) 80%, var(--gold));
+  }
+
+  h1 {
+    font-size: clamp(2.3rem, 5vw, 3.8rem);
+    line-height: 1.1;
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.025em;
+  }
+
+  .lead {
+    font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+    color: var(--muted);
+    max-width: 54ch;
+    margin-bottom: 2.5rem;
+  }
+
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    padding: 1.75rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--surface);
+    margin-top: 1rem;
+  }
+
+  .step-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .step-num {
+    display: grid;
+    place-items: center;
+    width: 2rem;
+    height: 2rem;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: var(--gold);
+    color: var(--ink);
+    font-weight: 800;
+    font-size: 0.88rem;
+  }
+
+  .step-item strong {
+    display: block;
+    font-size: 0.95rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .step-item p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.45;
+  }
+
+  /* Gruppen Grid */
+  .groups-section {
+    margin-top: clamp(2rem, 5vw, 3.5rem);
+  }
+
+  .groups-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .group-card {
+    display: flex;
+    flex-direction: column;
+    padding: clamp(1.75rem, 3.5vw, 2.5rem);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--canvas);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .group-card.highlight {
+    border-color: color-mix(in oklch, var(--gold) 65%, var(--line));
+    box-shadow: 0 4px 20px -4px color-mix(in oklch, var(--gold) 15%, transparent);
+  }
+
+  .card-tag {
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.75rem;
+  }
+
+  .group-card h2 {
+    font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+    margin-bottom: 0.85rem;
+  }
+
+  .card-desc {
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin-bottom: 1.5rem;
+  }
+
+  .card-notice {
+    display: flex;
+    gap: 0.85rem;
+    padding: 1rem 1.15rem;
+    border-radius: calc(var(--radius) - 2px);
+    margin-bottom: 2rem;
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+
+  .card-notice p {
+    margin: 0;
+  }
+
+  .card-notice.info {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    color: var(--ink);
+  }
+
+  .card-notice.info svg {
+    flex-shrink: 0;
+    margin-top: 0.15rem;
+    color: var(--muted);
+  }
+
+  .card-notice.verification {
+    background: color-mix(in oklch, var(--gold) 14%, var(--canvas));
+    border: 1px solid color-mix(in oklch, var(--gold) 50%, var(--line));
+    color: var(--ink);
+  }
+
+  .card-notice.verification svg {
+    flex-shrink: 0;
+    margin-top: 0.15rem;
+    color: color-mix(in oklch, var(--ink) 85%, var(--gold));
+  }
+
+  .card-notice.verification strong {
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .card-action {
+    margin-top: auto;
+  }
+
+  .full-width {
+    width: 100%;
+    gap: 0.75rem;
+    font-size: 1rem;
+    padding-block: 0.9rem;
+  }
+
+  .button.outline {
+    background: transparent;
+    border-color: var(--line);
+    color: var(--ink);
+  }
+
+  .button.outline:hover {
+    background: var(--surface);
+    border-color: var(--ink);
+  }
+
+  /* Support Box */
+  .support-box {
+    margin-top: 2.5rem;
+    padding: 1.75rem 2rem;
+    border-radius: var(--radius);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    text-align: center;
+  }
+
+  .support-box h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .support-box p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.92rem;
+  }
+
+  .support-box a {
+    color: var(--ink);
+    font-weight: 800;
+  }
+
+  @media (max-width: 860px) {
+    .groups-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .process-steps {
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+  }
+</style>
