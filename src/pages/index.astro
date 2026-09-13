@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { faqs, site } from '../data/site';
-const baseUrl = `${import.meta.env.BASE_URL}/`;
+const baseUrl = import.meta.env.BASE_URL;
 ---
 <BaseLayout title="Anmeldung | Weg des Wissens" description="Melde dich für das Weg des Wissens Bildungsprogramm an und vertiefe islamisches Wissen strukturiert, verständlich und gemeinsam mit anderen.">
 <header class="site-header"><div class="shell header-inner"><a class="brand brand-mark" href="#inhalt" aria-label="Zur Startseite"><img src={`${baseUrl}images/wdw-logo.png`} alt="" width="46" height="41"/></a><nav aria-label="Hauptnavigation"><a href="#programm">Programm</a><a href="#ablauf">Ablauf</a><a href="#fragen">Fragen</a></nav><a class="button small" href={site.tallyUrl} target="_blank" rel="noreferrer">Jetzt anmelden <span aria-hidden="true">↗</span></a></div></header>
