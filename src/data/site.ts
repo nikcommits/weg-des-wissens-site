@@ -5,6 +5,7 @@ export const site = {
   donation: { recipient: 'Weg des Wissens e.V.', iban: 'DE05 3705 0299 0000 7851 50', bic: 'COKSDE33XXX', bank: 'Kreissparkasse Köln', blz: '37050299', purpose: 'Spende' },
 };
 export const faqs = [
+  ['Wann und wo findet der Unterricht statt?', 'Samstags vor Ort in Dortmund oder online, sonntags und dienstags online. Das Programm beginnt am 20. Oktober 2026. Die genauen Termine und Uhrzeiten werden in der WhatsApp-Gruppe bekannt gegeben.'],
   ['Für wen ist das Bildungsprogramm geeignet?', 'Für Interessierte, die islamisches Wissen strukturiert vertiefen und verbindlich lernen möchten.'],
   ['Welche Vorkenntnisse brauche ich?', 'Die konkreten Voraussetzungen werden im Anmeldeformular erläutert.'],
   ['Was kostet die Teilnahme?', 'Der Jahresbeitrag beträgt 100 € pro Jahr. Er ist keine Spende und kein Monatsabo.'],

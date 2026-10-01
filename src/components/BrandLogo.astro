@@ -1,0 +1,20 @@
+---
+interface Props { id: string; }
+const { id } = Astro.props;
+const baseUrl = import.meta.env.BASE_URL;
+const maskId = `${id}-mask`;
+---
+<!-- Reuse the exact symbol and lettering from the original transparent logo. -->
+<svg class="brand-logo" viewBox="0 0 2421 692" width="158" height="45" role="img" aria-label="Weg des Wissens" focusable="false">
+  <defs>
+    <mask id={maskId} maskUnits="userSpaceOnUse" x="0" y="0" width="1556" height="1388" style="mask-type: alpha">
+      <image href={`${baseUrl}images/wdw-logo.png`} width="1556" height="1388"/>
+    </mask>
+  </defs>
+  <svg x="0" y="0" width="745" height="692" viewBox="406 0 745 692" aria-hidden="true">
+    <rect width="1556" height="1388" fill="currentColor" mask={`url(#${maskId})`}/>
+  </svg>
+  <svg x="865" y="132" width="1556" height="428" viewBox="0 792 1556 428" aria-hidden="true">
+    <rect width="1556" height="1388" fill="currentColor" mask={`url(#${maskId})`}/>
+  </svg>
+</svg>
